@@ -1,0 +1,132 @@
+body {
+	-webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.page-title {
+	color: #fff;
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 50px;
+
+	h1 {
+		border-bottom: 1px solid #fff;
+		display: inline-block;
+	}
+}
+
+.project-item {
+
+	&:nth-child(odd) {
+		margin: 30px 0 -30px 0;
+	}
+
+    svg {
+        position: absolute;
+        top: -1px;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+
+        path {
+            fill: #fff;
+        }
+    }
+
+    figure {
+		position: relative;
+		overflow: hidden;
+		margin: 5px;
+		box-shadow: 0 0 5px rgba(0,0,0,0.3);
+		border-radius: 3px;
+		max-height: 400px;
+
+		img {
+			position: relative;
+			display: block;
+			width: 100%;
+		}
+
+		.project-link {
+			position: absolute;
+			z-index: 12;
+			width: 36px;
+			height: 36px;
+			background-color: #fff;
+			border-radius: 100px;
+			padding: 7px;
+			right: 5px;
+			top: 5px;
+			box-shadow: 0 0 5px rgba(0,0,0,0.3);
+
+			transform: scale(1);
+			transition: transform 0.2s ease-in-out;
+
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+	}
+
+    figcaption {
+		position: absolute;
+		top: 0;
+		z-index: 11;
+		padding: 10px;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		transform: translateY(0px);
+		transition: transform 0.4s ease-in-out;
+
+		h2 {
+			margin-top: 200px;
+			font-size: 24px;
+			color: #3591D7;
+		}
+		p {
+			color: #666;
+			font-weight: 200;
+			margin-top: 15px;
+		}
+	}
+
+	&:hover {
+		figcaption {
+			transform: translateY(130px);
+		}
+	}
+}
+
+@media(max-width:767px){
+	.project-item {
+	    margin-bottom: 50px;
+	    &:nth-child(odd) {
+			margin-bottom: 50px;
+		}
+	}
+}
+@media(min-width:768px){
+	.project-item figcaption h2 {
+	    margin-top: 142px;
+	    font-size: 18px;
+	}
+}
+@media(min-width:992px){
+	.project-item figcaption h2 {
+	    margin-top: 130px;
+	    font-size: 20px;
+	}
+}
+@media(min-width:1200px){
+	.project-item figcaption h2 {
+	    margin-top: 200px;
+	    font-size: 24px;
+	}
+}

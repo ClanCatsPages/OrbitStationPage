@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>ClanCats Projects | ClanCats Orbital Station</title>
+		<meta name="description" content="ClanCats Orbital Station, an overview of ClanCats Projects." />
+
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/ccorbit.css" />
+
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600' rel='stylesheet' type='text/css'>
+
+		<script src="assets/js/snap.svg-min.js"></script>
+		<!--[if IE]>
+  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+	</head>
+	<body style="background-image: url(http://www.clancats.ch/assets/CCFTheme/images/background_2.jpg)">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 page-title">
+					<img alt="ClanCats Logo" style="width: 200px;" src="assets/img/logo.png">
+					<div><h1>The ClanCats<strong> Network</strong></h1></div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<div class="row">
+						<div class="col-sm-4 col-md-4 project-item">
+							<div data-path-hover="m 0,276 L 180,276 L 180,320 L 0,320 z">
+								<figure>
+
+									<a target="_blank" href="http://station.clancats.com" class="project-link"><img src="assets/img/icons/link-black.png" /></a>
+
+									<img src="assets/img/projects/station.png" />
+
+									<svg viewBox="0 0 180 320" preserveAspectRatio="none">
+										<path d="m 0,170 L 180,120 L 180,320 L 0,320 z"/>
+									</svg>
+									<figcaption>
+										<h2>The Station</h2>
+										<p>The ClanCats blog, no super fancy layout just all sort of information, stories and thoughts about coding, clancats and my other projects.</p>
+									</figcaption>
+								</figure>
+							</div>
+						</div>
+						<div class="col-sm-4 col-md-4 project-item">
+							<div data-path-hover="m 0,276 L 180,276 L 180,320 L 0,320 z">
+								<figure>
+
+									<a target="_blank" href="http://clancats.ch" class="project-link"><img src="assets/img/icons/link-black.png" /></a>
+
+									<img src="assets/img/projects/company.png" />
+
+									<svg viewBox="0 0 180 320" preserveAspectRatio="none">
+										<path d="m 0,170 L 180,120 L 180,320 L 0,320 z"/>
+									</svg>
+									<figcaption>
+										<h2>The Company</h2>
+										<p>Socal Application engineering company based in Zürich.</p>
+									</figcaption>
+								</figure>
+							</div>
+						</div>
+						<div class="col-sm-4 col-md-4 project-item">
+							<div data-path-hover="m 0,276 L 180,276 L 180,320 L 0,320 z">
+								<figure>
+
+									<img src="assets/img/projects/quantum.png" />
+
+									<svg viewBox="0 0 180 320" preserveAspectRatio="none">
+										<path d="m 0,170 L 180,120 L 180,320 L 0,320 z"/>
+									</svg>
+									<figcaption>
+										<h2>Quantum</h2>
+										<p>A startup trying to build next generation cloud container hosting.</p>
+									</figcaption>
+								</figure>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 page-title">
+					<div><h2><strong> Open Source</strong> Projects</h1></div>
+				</div>
+			</div>
+
+			</section>
+
+		</div><!-- /container -->
+
+		<script>
+			(function() {
+	
+				function init() {
+					var speed = 400,
+						easing = mina.easeinout;
+
+					[].slice.call ( document.querySelectorAll( '.project-item > div' ) ).forEach( function( el ) {
+
+						var s = Snap( el.querySelector( 'svg' ) ), path = s.select( 'path' ),
+							pathConfig = {
+								from : path.attr( 'd' ),
+								to : el.getAttribute( 'data-path-hover' )
+							};
+
+						el.addEventListener( 'mouseenter', function() {
+							path.animate( { 'path' : pathConfig.to }, speed, easing );
+						} );
+
+						el.addEventListener( 'mouseleave', function() {
+							path.animate( { 'path' : pathConfig.from }, speed, easing );
+						} );
+					} );
+				}
+
+				init();
+
+			})();
+		</script>
+	</body>
+</html>
