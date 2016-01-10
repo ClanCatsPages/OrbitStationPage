@@ -10,8 +10,31 @@ module.exports = function(grunt) {
                     "assets/css/ccorbit.css": "assets/less/main.less"
                 }
             }
+        },
+        postcss: {
+            options: {
+                processors: [
+                    require('autoprefixer-core')({
+                        browsers: 'last 1 version'
+                    }).postcss
+                ]
+            },
+            files: {
+                "assets/css/ccorbit.css": "assets/less/main.less"
+            }
+        },
+        cssmin: {
+            options: {},
+            target: {
+                files: {
+                    'assets/css/ccorbit.css': "assets/css/ccorbit.css"
+                }
+            }
         }
     });
     grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.registerTask('default', ['less']);
+    grunt.loadNpmTasks('grunt-postcss');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+
+    grunt.registerTask('default', ['less', 'postcss', 'cssmin']);
 };

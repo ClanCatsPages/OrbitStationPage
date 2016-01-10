@@ -1,8 +1,11 @@
 {
-     "name": "ccorbit-base",
-     "version": "1.0.0",
-     "devDependencies": {
-         "grunt": "~0.4.2",
-         "grunt-contrib-less": "~0.8.2"
-     }
- }
+  "name": "ccorbit-base",
+  "version": "1.0.0",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-cssmin": "^0.12.3",
+    "grunt-contrib-less": "~0.8.2",
+    "grunt-legacssy": "^0.4.0",
+    "grunt-postcss": "^0.5.5"
+  }
+}
